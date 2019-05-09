@@ -1,0 +1,20 @@
+.CustomButton {
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 1em;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.60s;
+}
+
+.CustomButton:hover {
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+}
