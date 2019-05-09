@@ -1,0 +1,23 @@
+.ListItems {
+    display: inline-block;
+    margin-right: 7%;
+    margin-left: 7%;
+    margin-bottom: 20px;
+}
+
+.ListItems h3 {
+    text-align: left;
+    color: #eaeaea
+}
+
+.ListItems ul {
+    list-style-type: none;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.ListItems li a {
+    color: #e9e9e9;
+    text-decoration: none;
+}

@@ -5,6 +5,6 @@
     display: flex
 }
 
-div {
+.Header div {
     flex: 1
 }
