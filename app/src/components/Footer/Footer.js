@@ -6,6 +6,7 @@ import linkedin from '../../assets/socialmedia/linkedin.png'
 import twitter from '../../assets/socialmedia/twitter.png'
 import instagram from '../../assets/socialmedia/instagram.png'
 import SocialMedia from '../SocialMedia/SocialMedia'
+import Grid from '@material-ui/core/Grid'
 class footer extends Component {
     state = {
         footerContent: {
@@ -45,10 +46,32 @@ class footer extends Component {
     render() {
         return (
             <div className={classes.Footer}>
-                <ListItems title="Product" content={this.state.footerContent.product}/>
-                <ListItems title="Company" content={this.state.footerContent.company}/>
-                <ListItems title="Learn More" content={this.state.footerContent.learnMore}/>
-                <SocialMedia title="Follow Us" content={this.state.socialMedia}/>
+                <Grid container size={24}>
+                    <Grid item xs={3}>
+                        <ListItems 
+                        title="Product" 
+                        content={this.state.footerContent.product}
+                        />
+                    </Grid>
+                    <Grid item xs={3}>
+                        <ListItems 
+                        title="Company" 
+                        content={this.state.footerContent.company}
+                        /> 
+                    </Grid>
+                    <Grid item xs={3}>
+                        <ListItems 
+                        title="Learn More" 
+                        content={this.state.footerContent.learnMore}
+                        />
+                    </Grid>
+                    <Grid item xs={3}>
+                        <SocialMedia 
+                        title="Follow Us" 
+                        content={this.state.socialMedia}
+                        />
+                    </Grid>
+                </Grid>
             </div>
         );
     }
