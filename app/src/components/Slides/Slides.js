@@ -1,27 +1,34 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import classes from './Slides.module.css'
+import health from '../../assets/cards/health-bulletin-language-matters-hero.jpg'
+import testing from '../../assets/cards/lead-testing-hero.jpg'
+import measles from '../../assets/cards/measles-hero-attention.jpg'
+import tb from '../../assets/cards/tb-day-hero.png'
+import prev from '../../assets/navigation/prev.svg'
 import next from '../../assets/navigation/next.svg'
-import before from '../../assets/navigation/before.svg'
+
 class slides extends Component {
 
     state = {
-        gameImages: [],
-        displayBlock: true,
-        index: 0
+        heroCards: [
+            health,
+            testing,
+            measles,
+            tb
+        ],
+        index: 0,
+        data: [
+
+        ]
     }
 
     nextImage = () => {
         this.setState(prevState => ({
             index: prevState.index + 1
         }))
-        let currentIndex = this.state.index
-        if (this.state.index >= 9) {
+        if (this.state.index >= 3) {
             this.setState({ index: 0 })
-        } else if (currentIndex === this.state.index) {
-            this.setState({ displayBlock: true })
-        } else {
-            this.setState({ displayBlock: false })
         }
     }
 
@@ -29,39 +36,23 @@ class slides extends Component {
         this.setState(prevState => ({
             index: prevState.index - 1
         }))
-        let currentIndex = this.state.index
         if (this.state.index <= 0) {
-            this.setState({ index: 9 })
-        } else if (currentIndex === this.state.index) {
-            this.setState({ displayBlock: true })
-        } else {
-            this.setState({ displayBlock: false })
+            this.setState({ index: 3 })
         }
     }
 
     componentDidMount() {
-        axios.get('https://cors-anywhere.herokuapp.com/https://api-v3.igdb.com/games/?fields=name,cover.url,genres.name,popularity&order=popularity:desc&expand=genres', {
-            headers: {
-                'user-key': 'c8953b7fd6ba8294e0bbcadd63970448',
-                Accept: 'application/json',
-                'X-Requested-With': XMLHttpRequest
-            }
+        axios.get('https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD', {
         }).then(res => {
-            res.data.map(item => {
-                this.setState(prevState => ({
-                    gameImages: [...prevState.gameImages, item.cover.url.replace('thumb', 'screenshot_big')]
-                }))
-                // console.log(item.cover.url.replace('thumb', 'screenshot_big'))
-            })
+            console.log(res.data.data[0])
         }).catch(error => {
             console.log(error)
         })
-
         let auto = setInterval(() => {
             this.setState(prevState => ({
                 index: prevState.index + 1
             }))
-            if (this.state.index > 9) {
+            if (this.state.index > 3) {
                 this.setState({ index: 0 })
             }
         }, 10000)
@@ -69,19 +60,21 @@ class slides extends Component {
 
     render() {
 
-        const styles = {
-            
-        }
-
-        let slideShow = this.state.gameImages.map((item, index) => {
-            return <div style={styles.image} key={index}><img src={item}/></div>
+        let sliding = this.state.heroCards.map((index, key) => {
+            return <div key={index}><img src={index}/></div>
         })
 
         return (
             <div className={classes.Slides}>
-                {slideShow[this.state.index]}
-                <button onClick={this.prevImage}><img src={before}/></button>
-                <button onClick={this.nextImage}><img src={next}/></button>
+                <div>
+                    <button onClick={this.prevImage}><img src={prev}/></button>
+                </div>
+                <div>
+                    {sliding[this.state.index]}
+                </div>
+                <div>
+                    <button onClick={this.nextImage}><img src={next}/></button>
+                </div>
             </div>
         )
     }

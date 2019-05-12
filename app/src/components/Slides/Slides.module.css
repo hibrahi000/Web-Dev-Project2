@@ -1,11 +1,8 @@
 .Slides {
-    text-align: center;
-    margin: 0 auto
-}
-
-.Slides button {
-    background-color: transparent;
-    border: none;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
 
 .Slides button img {
@@ -13,31 +10,7 @@
     height: 50px;
 }
 
-.fade-appear {
-    opacity: 0;
+.Slides button {
+    background: transparent;
+    border: none;
 }
-
-.fade-appear.fade-appear-active {
-    opacity: 1;
-    transition: opacity 300ms linear;
-}
-
-.fade-enter {
-    opacity: 0;
-}
-
-.fade-enter.fade-enter-active {
-    opacity: 1;
-    transition: opacity 300ms linear;
-}
-
-.fade-exit {
-    opacity: 1;
-}
-
-.fade-exit.fade-exit-active {
-    opacity: 0;
-    transition: opacity 300ms linear;
-}
-
-
