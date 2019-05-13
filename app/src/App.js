@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import './App.css';
 import Header from './components/Header/Header'
 import Layout from './components/Layout/Layout'
 import Footer from './components/Footer/Footer'
-import Slides from './components/Slides/Slides'
+import Home from './pages/Home'
+import Catagory from './pages/Catagory'
+import { BrowserRouter, Route } from 'react-router-dom'
 class App extends Component {
   render() {
     return (
       <Layout>
-        <Header></Header>
-        <Slides />
+        <Header />
+          <BrowserRouter>
+          <Route path="/" component={Home} exact />
+          <Route path="/Catagory" component={Catagory} />
+          </BrowserRouter>
         <Footer />
       </Layout>
     );

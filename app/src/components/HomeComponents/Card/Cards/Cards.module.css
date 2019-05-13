@@ -1,0 +1,15 @@
+.Cards {
+
+}
+
+.column {
+    margin: 25px;
+}
+
+.row {
+    display: flex;
+    /* justify-content: center; */
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    justify-content: center
+}

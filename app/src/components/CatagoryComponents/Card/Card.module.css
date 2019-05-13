@@ -1,0 +1,21 @@
+.card {
+    width: 400px;
+    transition: 500ms
+}
+
+.media {
+    height: 250px;
+}
+
+.content {
+    background: #404040;
+}
+
+.card:hover {
+    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
+}
+
+.buttonContainer {
+    background: #404040;
+    justify-content: center
+}
