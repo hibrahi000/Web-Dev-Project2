@@ -1,14 +1,34 @@
 import React, { Component } from 'react';
-import {Line} from 'react-chartjs-2';
+import {Line, Bar, Pie} from 'react-chartjs-2';
 
 class Chart extends Component {
     
     render() {
-        const data = {
+      const pieData = {
+        labels: [
+          'Male Deaths',
+          'Female Deaths',
+          'Total Deaths'
+        ],
+        datasets: [{
+          data: [this.props.maleDeaths, this.props.femaleDeaths, this.props.totalDeaths],
+          backgroundColor: [
+          'blue',
+          'red',
+          'yellow'
+          ],
+          hoverBackgroundColor: [
+          '#36A2EB',
+          '#FF6384',
+          '#FFCE56'
+          ]
+        }]
+      };
+        const lineData = {
             labels: this.props.years,
             datasets: [
               {
-                label: "Leading Cause of Death In New York City",
+                label: "Leading Cause of Death in New York City",
                 fill: false,
                 lineTension: 0.1,
                 backgroundColor: 'red',
@@ -21,8 +41,8 @@ class Chart extends Component {
                 pointBackgroundColor: '#fff',
                 pointBorderWidth: 1,
                 pointHoverRadius: 5,
-                pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-                pointHoverBorderColor: 'rgba(220,220,220,1)',
+                pointHoverBackgroundColor: 'black',
+                pointHoverBorderColor: 'black',
                 pointHoverBorderWidth: 2,
                 pointRadius: 1,
                 pointHitRadius: 10,
@@ -30,9 +50,31 @@ class Chart extends Component {
               }
             ]
           };
+          const barData = {
+            labels: this.props.years,
+            datasets: [
+              {
+                label: 'Leading Cause of Death in New York City',
+                backgroundColor: 'red',
+                borderColor: 'red',
+                borderWidth: 1,
+                hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+                hoverBorderColor: 'rgba(255,99,132,1)',
+                data: this.props.numberOfDeaths
+              }
+            ]
+          };
         return (
             <div>
-                <Line data={data} />
+                <div>
+                  <Line data={lineData} />
+                </div>
+                <div>
+                  <Bar data={barData} />
+                </div>
+                <div>
+                  <Pie data={pieData} />
+                </div>
             </div>
         )
     }

@@ -104,11 +104,14 @@ class modal extends React.Component {
     let modalContent = <DialogContent>
     <DialogContent id="alert-dialog-description">
       <Chart 
-      years={this.state.years}
+      years={this.state.years.sort()}
       numberOfDeaths={this.state.numberOfDeaths}
+      maleDeaths={this.state.maleDeaths}
+      femaleDeaths={this.state.femaleDeaths}
+      totalDeaths={this.state.allDeaths.length}
       />
       <DialogContentText id="alert-dialog-description">
-      Total Death: {this.state.allDeaths.length }
+      Total Death: {this.state.allDeaths.length}
     </DialogContentText> 
     <DialogContentText id="alert-dialog-description">
       Total Male Deaths: {this.state.maleDeaths}
