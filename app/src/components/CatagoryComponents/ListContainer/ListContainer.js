@@ -34,8 +34,8 @@ class listContainer extends Component {
 
     componentDidMount() {
         this.setState({ loading: true})
-        axios.get('https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD', {
-        }).then(res => {
+        axios.get('https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD')
+        .then(res => {
             res.data.meta.view.columns[9].cachedContents.top.map((item, index) => {
                 this.setState(prevState => ({
                     causesOfDeath: [...prevState.causesOfDeath, item.item]

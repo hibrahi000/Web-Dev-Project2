@@ -3,7 +3,7 @@ import classes from './SocialMedia.module.css'
 const socialMedia = (props) => {
     
     let socialList = props.content.map((social, key) => {
-        return <li key={key}><a href="_blank"><img src={social}/></a></li>
+        return <li key={key}><a href="_blank"><img src={social} alt="Social Media"/></a></li>
     })
 
     return (

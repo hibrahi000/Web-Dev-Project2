@@ -72,6 +72,7 @@ class slides extends Component {
                     <CardMedia
                     className={classes.media}
                     image={this.state.heroCards[this.state.index].image}
+                    alt="Hero Card"
                     title={this.state.heroCards[this.state.index].imageTitle}
                     />
                 <CardContent className={classes.content}>

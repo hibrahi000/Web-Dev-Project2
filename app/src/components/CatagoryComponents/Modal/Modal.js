@@ -17,9 +17,6 @@ class modal extends React.Component {
     years: [],
     numberOfYears: [],
     numberOfDeaths: [],
-    race: [],
-    numberOfDeathsByRace: [],
-    numberOfRace: [],
     totalDeaths: 0,
     maleDeaths: 0,
     femaleDeaths: 0,
@@ -31,17 +28,23 @@ class modal extends React.Component {
     this.setState({ loading: true, open: true });
     axios.get('https://data.cityofnewyork.us/api/views/jb7j-dtam/rows.json?accessType=DOWNLOAD', {
     }).then(res => {
-      this.setState({allDeaths: [], numberOfDeaths: [], numberOfYears: [], numberOfRace: [], maleDeaths: 0, femaleDeaths: 0 })
+      this.setState({allDeaths: [], numberOfDeaths: [], numberOfYears: [], maleDeaths: 0, femaleDeaths: 0 })
       res.data.data.map(item => {
         if (item.includes(this.props.causesOfDeath)) {
-            this.state.allDeaths.push(item)
+            this.setState(prevState => ({
+              allDeaths: [...prevState.allDeaths, item]
+            }))
         }
       })  
       this.state.allDeaths.map(item => {
         if (item[10] === "M" || item[10] === "Male") {
-          this.state.maleDeaths += 1
+          this.setState(prevState => ({
+            maleDeaths: prevState.maleDeaths + 1
+          }))
         } else {
-          this.state.femaleDeaths += 1
+          this.setState(prevState => ({
+            femaleDeaths: prevState.femaleDeaths + 1
+          }))
         }
       })
       this.state.allDeaths.map(item => {
@@ -54,17 +57,6 @@ class modal extends React.Component {
           numberOfDeaths: [...prevState.numberOfDeaths, this.state.numberOfYears.filter(y => y === year).length]
         }))
       })
-      this.state.allDeaths.map(item => {
-        this.setState(prevState => ({
-          numberOfRace: [...prevState.numberOfRace, item[11]]
-        }))
-      })
-      this.state.race.map(race => {
-        this.setState(prevState => ({
-          numberOfDeathsByRace: [...prevState.numberOfDeathsByRace, this.state.numberOfRace.filter(r => r === race).length]
-        }))
-      })
-      // console.log(this.state.numberOfDeathsByRace)
       setTimeout(() => {
         this.setState({ loading: false })
       }, 2000)
@@ -81,15 +73,10 @@ class modal extends React.Component {
                 years: [...prevState.years, item.item]
             }))
         })
-        res.data.meta.view.columns[11].cachedContents.top.map((item, index) => {
-          this.setState(prevState => ({
-              race: [...prevState.race, item.item]
-          }))
-      })
     }).catch(e => {
         console.log(e)
     })
-}
+  }
 
   handleClose = () => {
     this.setState({ open: false });
