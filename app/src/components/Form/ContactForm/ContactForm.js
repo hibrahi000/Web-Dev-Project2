@@ -50,8 +50,8 @@ class ContactForm extends Component {
         return(
            <div className={formBody}>
                 <Heading Title={this.state.Heading.Title} Message ={this.state.Heading.Message}/>
-                <GenInput Label = {'Name *'} Error ={this.state.NameInvalid} Change={this.nameChangeHandler}/>
-                <GenInput Label = {'Email *'} Error = {this.state.EmailInvalid} Change = {this.emailChangeHandeler}/>
+                <GenInput Label = {'Name *'} Error ={this.state.NameInvalid} errorMessage={'Please Enter Your Name'} Change={this.nameChangeHandler}/>
+                <GenInput Label = {'Email *'} Error = {this.state.EmailInvalid} errorMessage={'Please Enter Your Email with both a @ and a .com'} Change = {this.emailChangeHandeler}/>
                 <TextArea Label = {'Message'}/>
                 <SendMessageBtn onClick= {this.sendBtnHandler}/>
             </div>

@@ -8,7 +8,7 @@ class TextArea extends Component {
 
         return(
             <div>
-                <TextField multiline={true} label={Label}></TextField>
+                <TextField id="outlined-textarea"  variant="outlined" multiline={true} label={Label} style={{width: 500}}></TextField>
             </div>
         );
 

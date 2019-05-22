@@ -6,22 +6,22 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 class GenInput extends Component {
 
     render(){
-    let {Label, Error} = this.props;
+    let {Label, Error,errorMessage} = this.props;
     let {inputSpacing} = Style;
-
+        Error = false;
         let input;
         if(Error){
             input= (
                 <FormControl>
-                <TextField label={Label} error={Error} spellCheck={true}></TextField>
-                <FormHelperText variant='outlined' id="component-error-text" error={Error}>{Label}</FormHelperText>
+                <TextField variant='outlined' label={Label} error={Error} style={{width: 500}} ></TextField>
+                <FormHelperText variant='outlined' id="component-error-text" error={Error}>{errorMessage}</FormHelperText>
                 </FormControl>
             );
         }
         else{
             input =(
             <FormControl>
-            <TextField label={Label} error={Error} spellCheck={true}></TextField>
+            <TextField margin='normal' variant='outlined' label={Label} error={Error} style={{width: 500,color: 'white'}} ></TextField>
             </FormControl>
             );
         }

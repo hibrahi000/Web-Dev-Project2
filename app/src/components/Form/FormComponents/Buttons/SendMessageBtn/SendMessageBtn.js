@@ -11,7 +11,7 @@ library.add(faPaperPlane);
 class SendMessageBtn extends Component {
 
     render() {
-        let {btnPosition,sendIcon} = Style;
+        let {btnPosition} = Style;
         return (
 
             <div className={btnPosition}>
