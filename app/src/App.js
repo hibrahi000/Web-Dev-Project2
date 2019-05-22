@@ -7,6 +7,7 @@ import Catagory from './pages/Catagory'
 import Contact from './pages/Contact'
 import About from './pages/About'
 import { BrowserRouter, Route } from 'react-router-dom'
+
 class App extends Component {
   render() {
     return (

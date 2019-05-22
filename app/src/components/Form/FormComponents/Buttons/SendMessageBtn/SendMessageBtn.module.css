@@ -1,0 +1,9 @@
+.btnPosition{
+    top: 170px;
+    left: 170px;
+    position: relative;
+}
+.sendIcon{
+    font-family: 'font-awsome';
+    content: 'f1d8';
+}
