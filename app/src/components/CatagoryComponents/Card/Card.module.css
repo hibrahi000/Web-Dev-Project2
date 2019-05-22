@@ -8,14 +8,17 @@
 }
 
 .content {
-    background: #404040;
+    /* background: #404040; */
+    background: #D6D5DA;
 }
 
 .card:hover {
-    box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
+    box-shadow: 15px 15px 30px 0px #A4D5DA;
+    /* rgba(0,50,200,0.75); */
 }
 
 .buttonContainer {
-    background: #404040;
+    /* background: #404040; */
+    background: #D6D5DA;
     justify-content: center
 }
