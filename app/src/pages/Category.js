@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Layout from '../components/Layout/Layout'
 import ListContainer from '../components/CatagoryComponents/ListContainer/ListContainer'
-class Catagory extends Component {
+class Category extends Component {
   render() {
     return (
       <Layout>
@@ -11,4 +11,4 @@ class Catagory extends Component {
   }  
 }
 
-export default Catagory;
+export default Category;

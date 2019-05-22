@@ -6,7 +6,7 @@ const NavBar = (props) => {
         <div className={classes.NavBar}>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/Catagory">Catagory</a></li>
+                <li><a href="/Category">Category</a></li>
                 <li><a href="/Contact">Contact</a></li>
                 <li><a href="/About">About</a></li>
             </ul>
