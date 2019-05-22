@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 
 const mediaCard = (props) => {
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} onClick={props.onClick}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
