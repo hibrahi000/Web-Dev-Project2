@@ -13,16 +13,14 @@ class GenInput extends Component {
         if(Error){
             input= (
                 <FormControl>
-                <TextField variant='outlined' label={Label} error={Error} style={{width: 500}} ></TextField>
+                <TextField variant='outlined' label={Label} error={Error} style={{width: '100%'}} ></TextField>
                 <FormHelperText variant='outlined' id="component-error-text" error={Error}>{errorMessage}</FormHelperText>
                 </FormControl>
             );
         }
         else{
             input =(
-            <FormControl>
-            <TextField margin='normal' variant='outlined' label={Label} error={Error} style={{width: 500,color: 'white'}} ></TextField>
-            </FormControl>
+            <TextField margin='normal' variant='outlined' label={Label} error={Error} style={{width: '100%', color: 'white'}} ></TextField>
             );
         }
 

@@ -5,7 +5,6 @@ import Footer from './components/Footer/Footer'
 import Home from './pages/Home'
 import Category from './pages/Category'
 import Contact from './pages/Contact'
-import About from './pages/About'
 import { BrowserRouter, Route } from 'react-router-dom'
 
 class App extends Component {
@@ -17,7 +16,6 @@ class App extends Component {
             <Route path="/" component={Home} exact />
             <Route path="/Category" component={Category} />
             <Route path="/Contact" component={Contact} />
-            <Route path="/About" component={About} />
           </BrowserRouter>
         <Footer />
       </Layout>
