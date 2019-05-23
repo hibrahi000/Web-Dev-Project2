@@ -22,7 +22,7 @@ class App extends Component {
         <Footer />
       </Layout>
     );
-  }  
+  }
 }
 
 export default App;
