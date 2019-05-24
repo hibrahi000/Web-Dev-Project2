@@ -15,7 +15,7 @@ class SendMessageBtn extends Component {
         return (
 
             <div className={btnPosition}>
-            <Button variant="contained" color={'primary'} fullWidth={false} size={'large'}>
+            <Button variant="contained" color={'primary'} fullWidth={false} size={'large'} onClick={() => alert("Thanks for your information, we will be in contact soon!")}>
                 Send Message
                 <Icon></Icon><FontAwesomeIcon icon={faPaperPlane}/>
             </Button>

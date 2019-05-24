@@ -1,3 +1,12 @@
 .inputSpacing{
     margin-bottom: 50px;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%
 }
+
+/* @media screen and (min-width: 1000px) {
+    .inputSpacing {
+        width: 100%
+    }
+} */

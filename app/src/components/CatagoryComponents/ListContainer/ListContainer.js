@@ -27,7 +27,7 @@ class listContainer extends Component {
             "https://www.criminal-lawyers.com.au/wp-content/uploads/2017/06/assault-300x225.jpg",
             "https://www.cdc.gov/copd/images/flexslider/copd-burden_575px.jpg",
             "https://f5h3y5n7.stackpathcdn.com/sites/default/files/neurons%20.jpg",
-            "https://hellodoktor.com/wp-content/uploads/2017/07/septicemia.jpg",
+            "https://lp.medicalnewstoday.com/content/images/hero/311/311589/311589_1100.jpg",
             "https://cdn1.medicalnewstoday.com/content/images/articles/312/312579/kidneys.jpg",
         ]
     }
